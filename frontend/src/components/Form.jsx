@@ -21,7 +21,7 @@ function Form({ addSlot }) {
 
     try {
       const res = await axios.post(
-        "http://localhost:3001/alerts",
+        "https://alert-slots-app.onrender.com/alerts",
         formData
       );
 

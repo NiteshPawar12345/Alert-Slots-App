@@ -8,6 +8,8 @@ function Dashboard() {
   useEffect(() => {
     const fetchSlots = async () => {
       const res = await axios.get("https://alert-slots-app.onrender.com/alerts");
+      console.log(res);
+      
       setSlots(res.data.data);
     };
     fetchSlots();
@@ -18,7 +20,7 @@ function Dashboard() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3001/alerts/${id}`);
+    await axios.delete(`https://alert-slots-app.onrender.com/alerts/${id}`);
     setSlots((prev) => prev.filter((slot) => slot._id !== id));
   };
 
@@ -30,7 +32,7 @@ function Dashboard() {
           ? "Expired"
           : "Active";
 
-    await axios.put(`http://localhost:3001/alerts/${id}`, {
+    await axios.put(`https://alert-slots-app.onrender.com/alerts/${id}`, {
       status: newStatus,
     });
 
@@ -65,7 +67,7 @@ function Dashboard() {
           >
             <button
               onClick={() => handleDelete(slot._id)}
-              className="absolute top-2 right-2 text-xs bg-red-500 text-white px-2 py-1 rounded"
+              className="absolute top-2 right-2 text-xs bg-red-500 text-white px-2 py-1 rounded cursor-pointer"
             >
               Delete
             </button>
@@ -82,7 +84,7 @@ function Dashboard() {
 
               <button
                 onClick={() => handleStatusClick(slot._id, slot.status)}
-                className={`px-3 py-1 rounded text-white text-xs
+                className={`px-3 py-1 rounded text-white text-xs cursor-pointer
             ${slot.status === "Active"
                     ? "bg-green-500"
                     : slot.status === "Booked"

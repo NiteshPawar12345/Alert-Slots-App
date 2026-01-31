@@ -1,5 +1,7 @@
 Visa Slot Alert App
 
+LIVE: https://alert-slots-app-git-main-niteshpawar12345s-projects.vercel.app/
+
 Visa Slot Alert App is a simple full-stack MERN project.
 In this project, users can create, view, update and delete visa slot alerts.
 The UI updates in real time, so there is no need to refresh the page again and again.

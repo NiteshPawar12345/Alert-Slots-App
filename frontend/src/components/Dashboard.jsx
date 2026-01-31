@@ -7,7 +7,7 @@ function Dashboard() {
 
   useEffect(() => {
     const fetchSlots = async () => {
-      const res = await axios.get("http://localhost:3001/alerts");
+      const res = await axios.get("https://alert-slots-app.onrender.com/alerts");
       setSlots(res.data.data);
     };
     fetchSlots();
